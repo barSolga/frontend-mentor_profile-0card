@@ -42,7 +42,7 @@ main::after {
 
 .card {
   position: absolute;
-  width: 320px;
+  width: 300px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -144,5 +144,11 @@ main::after {
 .card__profile-details-info-item-text {
   font-size: .6rem;
   color: #969696;
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: 400px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
