@@ -1,0 +1,125 @@
+// ==== color variables ==== //
+
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+
+// ==== global styles ==== //
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 112.5%;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: $dark-cyan;
+}
+
+// ==== main ==== //
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    &::before {
+        content: url('../images/bg-pattern-bottom.svg');
+        position: absolute;
+        top: -80%;
+        left: -20%;
+        transform: rotate(180deg);
+    }
+    &::after {
+        content: url('../images/bg-pattern-bottom.svg');
+        position: absolute;
+        bottom: -80%;
+        right: -20%;
+        z-index: -1;
+    }
+}
+
+// ==== card style ==== //
+
+.card {
+    position: absolute;
+    width: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px hsl(185, 75%, 33%);
+    overflow: hidden;
+    &__bg-pic {
+        width: 100%;
+        height: 150px;
+        background-image: url('../images/bg-pattern-card.svg');
+    }
+    &__profile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        background-color: #fff;
+        &-pic {
+            position: absolute;
+            border-radius: 50%;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid #fff;
+        }
+        &-details {
+            width: 100%;
+            margin-top: 2em;
+            text-align: center;
+            &-user {
+                margin-bottom: .6em;
+                &-name {
+                    font-weight: bold;
+                    color: $dark-grayish-blue;
+                    padding-right: 10px;
+                }
+                &-age {
+                    color: $dark-gray;
+                }
+            }
+            &-city {
+                color: $dark-gray;
+                margin-bottom: 2em;
+            }
+            &-hr {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                border: .5px solid #ebeaea;
+            }
+            &-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                    &-item {
+                        margin-top: 2em;
+                        &-heading {
+                            color: $dark-grayish-blue;
+                            margin-bottom: .2em;
+                        }
+                        &-text {
+                            font-size: .6rem;
+                            color: $dark-gray;
+                        }
+                    }
+            }
+        }
+    }
+}
